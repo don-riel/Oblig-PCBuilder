@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="821.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.Controller_UserPage">
+   <children>
+      <AnchorPane prefHeight="481.0" prefWidth="929.0">
+         <children>
+            <VBox layoutX="29.0" layoutY="52.0" prefHeight="380.0" prefWidth="631.0">
+               <children>
+                  <TableView fx:id="tableView_CompList" prefHeight="403.0" prefWidth="631.0">
+                    <columns>
+                        <TableColumn fx:id="col_Component" prefWidth="156.0" text="Component">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="componentType" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_Name" prefWidth="354.0" text="Name/Description">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_Price" prefWidth="120.0" text="Price(NOK)">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="price" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+            <Label layoutX="701.0" layoutY="42.0" />
+            <GridPane layoutX="684.0" layoutY="51.0" prefHeight="378.0" prefWidth="206.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="21.0" valignment="TOP" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                <RowConstraints fillHeight="false" maxHeight="101.0" minHeight="0.0" prefHeight="42.0" valignment="TOP" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="166.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="228.0" minHeight="10.0" prefHeight="43.0" valignment="TOP" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="228.0" minHeight="10.0" prefHeight="79.0" valignment="TOP" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="153.0" minHeight="0.0" prefHeight="0.0" valignment="TOP" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="120.0" minHeight="2.0" prefHeight="27.0" valignment="TOP" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="67.0" valignment="TOP" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="28.0" valignment="TOP" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="200.0" text="Filters" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="choiceBox_Components" prefHeight="25.0" prefWidth="213.0" GridPane.rowIndex="2" />
+                  <Label prefHeight="29.0" prefWidth="200.0" text="Components" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="29.0" prefWidth="200.0" text="Price" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="choiceBox_Price" prefHeight="25.0" prefWidth="205.0" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#add_Item" prefHeight="40.0" prefWidth="208.0" text="Add Selected Item " GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label prefHeight="32.0" prefWidth="200.0" text="Add Item To Your Build" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="label_AddItemInfo" prefHeight="24.0" prefWidth="200.0" GridPane.rowIndex="9" />
+                  <Label fx:id="label_FilterInfo" prefHeight="46.0" prefWidth="206.0" textFill="#141414" underline="true" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+               </children>
+            </GridPane>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="14.0" prefHeight="17.0" prefWidth="430.0" text="PC Builder" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri" size="28.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="442.0" prefWidth="929.0">
+         <children>
+            <VBox layoutX="27.0" layoutY="44.0" prefHeight="269.0" prefWidth="452.0">
+               <children>
+                  <TableView fx:id="tableView_UserItemList" prefHeight="275.0" prefWidth="452.0">
+                    <columns>
+                        <TableColumn fx:id="col_UserItemComponent" prefWidth="121.0" text="Component">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="componentType" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_UserItemName" prefWidth="218.0" text="Name/Description">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_UserItemPrice" prefWidth="112.0" text="Price">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="price" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <Label fx:id="label_TotalPrice" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="279.0" layoutY="325.0" prefHeight="17.0" prefWidth="200.0" textAlignment="RIGHT">
+               <font>
+                  <Font name="Calibri Italic" size="14.0" />
+               </font></Label>
+            <Label layoutX="29.0" layoutY="14.0" prefHeight="17.0" prefWidth="224.0" text="Your Build's List">
+               <font>
+                  <Font name="Calibri" size="19.0" />
+               </font>
+            </Label>
+            <Button layoutX="491.0" layoutY="78.0" mnemonicParsing="false" onAction="#remove_Item" prefHeight="40.0" prefWidth="151.0" text="Remove Selected Item" />
+            <Button layoutX="498.0" layoutY="214.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="151.0" text="Save Build" />
+            <Button layoutX="498.0" layoutY="267.0" mnemonicParsing="false" onAction="#open" prefHeight="40.0" prefWidth="151.0" text="Open a Previous Build" />
+            <Label fx:id="label_FileInfo" alignment="CENTER" contentDisplay="CENTER" layoutX="499.0" layoutY="325.0" prefHeight="17.0" prefWidth="252.0" textAlignment="CENTER" />
+            <Label fx:id="label_RemoveInfo" layoutX="493.0" layoutY="120.0" prefHeight="17.0" prefWidth="244.0" />
+            <Button layoutX="494.0" layoutY="143.0" mnemonicParsing="false" onAction="#clearList" prefHeight="40.0" prefWidth="151.0" text="Clear List" />
+            <ChoiceBox fx:id="choiceBox_SampleBuilds" layoutX="329.0" layoutY="13.0" prefWidth="150.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</VBox>
